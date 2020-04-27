@@ -20,5 +20,5 @@
 
 ### Large
 
-<img src="pic/Large_home.svg">
-<img src="pic/Large_page.svg">
+<img src="pic/large_home.svg">
+<img src="pic/large_page.svg">
