@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1633" height="1366" viewBox="0 0 1633 1366">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-style_tile);
+      }
+
+      .cls-2 {
+        fill: #e8e9f3;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #707070;
+      }
+
+      .cls-20, .cls-21, .cls-3 {
+        fill: #c6caed;
+      }
+
+      .cls-18, .cls-19, .cls-22, .cls-23, .cls-24, .cls-25, .cls-29, .cls-4 {
+        fill: #2d3047;
+      }
+
+      .cls-26, .cls-32, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-27, .cls-6 {
+        fill: #f7f7f9;
+      }
+
+      .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-28, .cls-7, .cls-8, .cls-9 {
+        fill: #707070;
+      }
+
+      .cls-18, .cls-22, .cls-8 {
+        font-size: 36px;
+      }
+
+      .cls-8 {
+        font-family: BIZ-UDPMincho-Medium, BIZ UDPMincho;
+        font-weight: 500;
+      }
+
+      .cls-10, .cls-9 {
+        font-size: 28px;
+      }
+
+      .cls-11, .cls-15, .cls-9 {
+        font-family: Meiryo-Bold, Meiryo;
+      }
+
+      .cls-11, .cls-15, .cls-18, .cls-19, .cls-20, .cls-21, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-9 {
+        font-weight: 700;
+      }
+
+      .cls-10, .cls-12, .cls-13, .cls-14, .cls-16, .cls-17 {
+        font-family: Meiryo;
+      }
+
+      .cls-11, .cls-12, .cls-19, .cls-23, .cls-24 {
+        font-size: 24px;
+      }
+
+      .cls-13 {
+        font-size: 20px;
+      }
+
+      .cls-14 {
+        font-size: 18px;
+      }
+
+      .cls-15, .cls-16, .cls-25 {
+        font-size: 16px;
+      }
+
+      .cls-17 {
+        font-size: 12px;
+      }
+
+      .cls-18, .cls-19 {
+        font-family: SitkaHeading-Bold, Sitka Heading;
+      }
+
+      .cls-20 {
+        font-size: 123px;
+      }
+
+      .cls-20, .cls-21, .cls-26, .cls-27, .cls-28, .cls-29 {
+        font-family: SitkaSmall-Bold, Sitka Small;
+      }
+
+      .cls-21, .cls-26, .cls-27, .cls-28, .cls-29 {
+        font-size: 60px;
+      }
+
+      .cls-22, .cls-23 {
+        font-family: SitkaSubheading, Sitka Subheading;
+      }
+
+      .cls-24, .cls-25 {
+        font-family: SitkaSubheading-Bold, Sitka Subheading;
+      }
+
+      .cls-30 {
+        stroke: none;
+      }
+
+      .cls-31 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clip-style_tile">
+      <rect width="1633" height="1366"/>
+    </clipPath>
+  </defs>
+  <g id="style_tile" data-name="style tile" class="cls-1">
+    <rect class="cls-32" width="1633" height="1366"/>
+    <g id="Rectangle_8" data-name="Rectangle 8" class="cls-2" transform="translate(164 50)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Rectangle_9" data-name="Rectangle 9" class="cls-3" transform="translate(642 50)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Rectangle_10" data-name="Rectangle 10" class="cls-4" transform="translate(1120 50)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Rectangle_11" data-name="Rectangle 11" class="cls-5" transform="translate(164 300)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Rectangle_12" data-name="Rectangle 12" class="cls-6" transform="translate(642 300)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Rectangle_13" data-name="Rectangle 13" class="cls-7" transform="translate(1120 300)">
+      <rect class="cls-30" width="350" height="200"/>
+      <rect class="cls-31" x="0.5" y="0.5" width="349" height="199"/>
+    </g>
+    <g id="Group_39" data-name="Group 39" transform="translate(-10 10)">
+      <text id="BIZ_UDPMincho_36pt_Medium" data-name="BIZ UDPMincho 36pt Medium" class="cls-8" transform="translate(86 887)"><tspan x="0" y="0">BIZ UDPMincho 36pt Medium</tspan></text>
+      <g id="Group_35" data-name="Group 35" transform="translate(0 345)">
+        <text id="Meiryo_28pt_Bold_" data-name="Meiryo 28pt Bold " class="cls-9" transform="translate(86 689)"><tspan x="0" y="0">Meiryo 28pt Bold </tspan></text>
+        <text id="Meiryo_28pt_Regular" data-name="Meiryo 28pt Regular" class="cls-10" transform="translate(86 731)"><tspan x="0" y="0">Meiryo 28pt Regular</tspan></text>
+        <text id="Meiryo_24pt_Bold_" data-name="Meiryo 24pt Bold " class="cls-11" transform="translate(86 763)"><tspan x="0" y="0">Meiryo 24pt Bold </tspan></text>
+        <text id="Meiryo_24pt_Regular" data-name="Meiryo 24pt Regular" class="cls-12" transform="translate(86 799)"><tspan x="0" y="0">Meiryo 24pt Regular</tspan></text>
+        <text id="Meiryo_20pt_Regular" data-name="Meiryo 20pt Regular" class="cls-13" transform="translate(86 831)"><tspan x="0" y="0">Meiryo 20pt Regular</tspan></text>
+        <text id="Meiryo_18pt_Regular" data-name="Meiryo 18pt Regular" class="cls-14" transform="translate(86 859)"><tspan x="0" y="0">Meiryo 18pt Regular</tspan></text>
+        <text id="Meiryo_16pt_Bold_" data-name="Meiryo 16pt Bold " class="cls-15" transform="translate(86 884)"><tspan x="0" y="0">Meiryo 16pt Bold </tspan></text>
+        <text id="Meiryo_16pt_Regular" data-name="Meiryo 16pt Regular" class="cls-16" transform="translate(86 908)"><tspan x="0" y="0">Meiryo 16pt Regular</tspan></text>
+        <text id="Meiryo_12pt_Regular" data-name="Meiryo 12pt Regular" class="cls-17" transform="translate(86 932)"><tspan x="0" y="0">Meiryo 12pt Regular</tspan></text>
+      </g>
+      <g id="Group_37" data-name="Group 37">
+        <text id="Sitka_Heading_36pt_Bold" data-name="Sitka Heading 36pt Bold" class="cls-18" transform="translate(86 940)"><tspan x="0" y="0">Sitka Heading 36pt Bold</tspan></text>
+        <text id="Sitka_Heading_24pt_Bold" data-name="Sitka Heading 24pt Bold" class="cls-19" transform="translate(86 976)"><tspan x="0" y="0">Sitka Heading 24pt Bold</tspan></text>
+      </g>
+      <g id="Group_38" data-name="Group 38">
+        <text id="Sitka_Small_120pt_Bold" data-name="Sitka Small 120pt Bold" class="cls-20" transform="translate(86 633)"><tspan x="0" y="0">Sitka Small 120pt Bold</tspan></text>
+        <text id="Sitka_Small_60pt_Bold" data-name="Sitka Small 60pt Bold" class="cls-21" transform="translate(86 708)"><tspan x="0" y="0">Sitka Small 60pt Bold</tspan></text>
+      </g>
+      <g id="Group_36" data-name="Group 36">
+        <text id="Sitka_Subheading_36pt_Regular" data-name="Sitka Subheading 36pt Regular" class="cls-22" transform="translate(86 766)"><tspan x="0" y="0">Sitka Subheading 36pt Regular</tspan></text>
+        <text id="Sitka_Subheading_24pt_Regular" data-name="Sitka Subheading 24pt Regular" class="cls-23" transform="translate(86 817)"><tspan x="0" y="0">Sitka Subheading 24pt Regular</tspan></text>
+        <text id="Sitka_Subheading_24pt_Bold" data-name="Sitka Subheading 24pt Bold" class="cls-24" transform="translate(86 793)"><tspan x="0" y="0">Sitka Subheading 24pt Bold</tspan></text>
+        <text id="Sitka_Subheading_16pt_Bold" data-name="Sitka Subheading 16pt Bold" class="cls-25" transform="translate(86 835)"><tspan x="0" y="0">Sitka Subheading 16pt Bold</tspan></text>
+      </g>
+    </g>
+    <text id="_2D3047" data-name="#2D3047" class="cls-26" transform="translate(1154 165)"><tspan x="0" y="0">#2D3047</tspan></text>
+    <text id="_707070" data-name="#707070" class="cls-27" transform="translate(1154 415)"><tspan x="0" y="0">#707070</tspan></text>
+    <text id="_F7F7F9" data-name="#F7F7F9" class="cls-28" transform="translate(676 415)"><tspan x="0" y="0">#F7F7F9</tspan></text>
+    <text id="_C6CAED" data-name="#C6CAED" class="cls-28" transform="translate(667 165)"><tspan x="0" y="0">#C6CAED</tspan></text>
+    <text id="_E8E9F3" data-name="#E8E9F3" class="cls-29" transform="translate(195 165)"><tspan x="0" y="0">#E8E9F3</tspan></text>
+    <text id="_FFFFFF" data-name="#FFFFFF" class="cls-21" transform="translate(198 415)"><tspan x="0" y="0">#FFFFFF</tspan></text>
+  </g>
+</svg>

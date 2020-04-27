@@ -1,0 +1,55 @@
+@import "normal.css";
+
+:root{
+    --background-c: #F7F7F9; /*background color*/
+    --text_c: #707070; /*text color*/
+    --dark_h: #2D3047; /*dark header*/
+    --light_h: #C6CAED; /*light header*/
+    --light_c: #FFFFFF; /*light color*/
+    --footer_bc: #E8E9F3; /*footer background color*/
+}
+
+
+html{
+    font-size:100%;
+    box-sizing: border-box;
+    margin: auto;
+    display: block;
+}
+
+[hidden] {
+    display:none !important;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+.contain{
+    width:100%;
+    margin:auto;
+}
+
+#style, #small, #medium, #large, .start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#style img, #small img, #medium img, #large img{
+    width: 50%;
+}
+
+.start{
+    color: var(--dark_h);
+}
+
+#style h1, #small h1, #medium h1, #large h1, #style h3, #small h3, #medium h3, #large h3{
+    padding: 2rem;
+    margin-top: 2rem;
+    color: var(--dark_h);
+    background-color: var(--light_h);
+}
