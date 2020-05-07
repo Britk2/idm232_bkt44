@@ -151,8 +151,8 @@ footer{
 }
 
 #fill, #info{
-    width:60%;
-    height: 90%;
+    width: 100%;
+    height: 40%;
     position:fixed;
     bottom: 0;
     right: 0;
@@ -165,12 +165,16 @@ footer{
     color: var(--light_h);
 }
 
-.top, .cat ul li{
+.top, .cat,.cat ul li{
     display: flex;
     flex-direction: row;
     justify-content: start;
     padding-left:1rem;
     padding-top: .5rem;
+}
+
+.cat{
+    justify-content: space-evenly;
 }
 
 .cat ul li{
@@ -184,7 +188,7 @@ footer{
     margin: auto;
 }
 
-.cat, .cat ul{
+.cat ul{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -193,10 +197,12 @@ footer{
     height: 87.5%;
 }
 
-.info_p{
+.info_p p{
     color: var(--light_c);
     padding: 1rem;
     line-height: 1.5;
+    margin: auto;
+    max-width: 60ch;
 }
 
 .check{
@@ -207,6 +213,7 @@ footer{
 
 .cat a{
     color: var(--light_c);
+    text-decoration: underline;
 }
 
 #test{
@@ -218,6 +225,8 @@ footer{
     text-align: center;
     padding: 2rem;
 }
+
+
 
 /*Recipe Page*/
 #headerImg {
@@ -245,20 +254,32 @@ footer{
     flex-direction: column;
 }
 
+#header h1, #header h2{
+    padding: 0 1rem 0 1rem;
+}
+
 .step h3{
     color: var(--light_h);
     font-size: 3rem;
     margin-bottom: 0;
 }
 
+.step_head{
+    width: 100%;
+    margin:auto;
+    text-align: center;
+}
+
 .step h4{
     color: var(--dark_h);
 }
 
-p{
-    padding:.5rem .5rem 2rem .5rem;
+.step p{
+    padding: 1rem 1rem 2rem 1rem;
     text-indent: 3rem;
     font-family: var(--par_t);
+    max-width: 70ch;
+    margin: auto;
 }
 
 #ingredients img, .step img{
@@ -269,23 +290,12 @@ p{
 /*Medium Size*/
 
 @media screen and (min-width:50rem){
-    #fill, #info{
-        width:40%;
-        height: 90%;
-        position:fixed;
-        bottom: 0;
-        right: 0;
-        background: var(--dark_h);
-        opacity: 100%;
-        z-index: 20;
-    }
-
     #ingredients img, .step img{
         width: 45rem;
     }
 
-    p{
-        width: 60ch;
+    .step p{
+        width: 75ch;
     }
 
     #headerImg {
@@ -298,7 +308,7 @@ p{
 @media screen and (min-width: 74rem){
 
     #fill, #info{
-        width:50%;
+        max-width:50rem;
         height: 50%;
         position:fixed;
         bottom: 0;
@@ -327,5 +337,34 @@ p{
         flex-direction: row;
         justify-content: space-around;
     }
+
+    .step_head{
+        width: auto;
+        margin: 0;
+    }
+    #one, #three, #five{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #two, #four, #six{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center;
+    }
+
+    .step{
+        padding-bottom: 2rem;
+    }
+    #body{
+        padding:1rem;
+    }
+
+    .step p{
+        padding: 0 3rem 0 3rem;
+        margin: 0;
+    }
+
 }
 
