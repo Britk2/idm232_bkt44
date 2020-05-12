@@ -130,18 +130,18 @@ footer{
 
 .preview{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    justify-items: left;
+    flex-direction: column;
     font-size: 90%;
     margin: auto;
-    width: 90%;
+    width: 100%;
 }
+
 .preview img, .preview figcaption{width: 25rem;}
 
+.preview figcaption{height: 5rem;}
+
 .preview figure{
-    margin: 0;
+    margin: auto;
     padding:2rem;
     opacity: 25%;
 }
@@ -246,6 +246,7 @@ footer{
             transform: translate(-50%,-50%);
   }
 
+
 #header, #ingredients, .step{
     margin: auto;
     display: flex;
@@ -274,22 +275,23 @@ footer{
     color: var(--dark_h);
 }
 
-.step p{
+.step p, #desc{
     padding: 1rem 1rem 2rem 1rem;
     text-indent: 3rem;
     font-family: var(--par_t);
-    max-width: 70ch;
+    max-width: 65ch;
     margin: auto;
 }
 
 #ingredients img, .step img{
-    width: 100%;
+    width: 90%;
+    padding-bottom: 1rem;
 }
 
 
 /*Medium Size*/
 
-@media screen and (min-width:50rem){
+@media screen and (min-width:59rem){
     #ingredients img, .step img{
         width: 45rem;
     }
@@ -300,6 +302,22 @@ footer{
 
     #headerImg {
         height: 20rem;
+    }
+
+    .preview{
+        flex-flow: row wrap;
+        justify-content: start;
+        align-content: center;
+        justify-items: left;
+        font-size: 90%;
+        width: 100%;
+        margin: auto;
+    }
+
+    .preview figure{
+        margin: 0;
+        padding:2rem;
+        opacity: 25%;
     }
 }
 
