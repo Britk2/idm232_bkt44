@@ -13,9 +13,11 @@
 
 
 html{
+    width: 100%;
     font-size:100%;
     box-sizing: border-box;
     margin: auto;
+    padding: auto;
     display: block;
     font-family: var(--par_t);
     color: var(--text_c);
@@ -30,6 +32,7 @@ html{
 *:after {
 	box-sizing: inherit;
 }
+body{width: 100%;}
 
 .contain{
     width:100%;
@@ -60,12 +63,15 @@ html{
 
 /*Both Pages*/
 #logo img, #search img{
-    width: 5rem;
+    width: 100%;
+    max-width: 5rem;
 }
 header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 #head{
@@ -75,6 +81,11 @@ header{
     top: 0;
     z-index: 50;
     margin: 0;
+}
+
+#name{
+    margin: auto;
+    padding: 2rem;
 }
 
 a{text-decoration: none; color:var(--dark_h)}
@@ -112,6 +123,7 @@ footer{
 /*Home Page*/
 
 #filter img{
+    width: 100%;
     max-width:5rem;
     position: fixed;
     bottom: 1.5rem;
@@ -120,6 +132,7 @@ footer{
     margin: 0;
 }
 #help img{
+    width: 100%;
     max-width:5rem;
     position: fixed;
     bottom: 7rem;
@@ -136,7 +149,8 @@ footer{
     width: 100%;
 }
 
-.preview img, .preview figcaption{width: 25rem;}
+.preview img, .preview figcaption{max-width: 25rem;
+width:100%;}
 
 .preview figcaption{height: 5rem;}
 
@@ -156,12 +170,13 @@ footer{
     position:fixed;
     bottom: 0;
     right: 0;
+    padding-bottom: .5rem;
     background: var(--dark_h);
     opacity: 100%;
     z-index: 20;
 }
 
-#fill h1, #info h1{
+#fill h1, #fill h2, #info h1{
     color: var(--light_h);
 }
 
