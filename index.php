@@ -1,3 +1,20 @@
+<?php
+    //Open Connection to db
+    require 'include/db.php';
+
+    //DB Table query
+
+    $table = 'recipe';
+    $query = "SELECT * FROM {$table}";
+    $result = mysqli_query($connection, $query);
+
+    // Error Check
+
+    if( !$result ){
+        die('Database query failed.');
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +29,7 @@
         <div id="head">
             <header>
                 <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="img/logo.png" alt="logo"></a>
                 </div>
                 <a href="#top"><h1 id="name">Home Chef</h1></a>
                 <div id="search">
@@ -103,63 +120,34 @@
         </div>
         <main>
             <div class="preview">
-                <figure>
-                    <img src="img/0101_FPP_Chicken-Rice_97338_WEB_SQ_hi_res.jpg" alt="Ancho-Orange Chicken">
-                    <figcaption><h2>Ancho-Orange Chicken</h2>
-                        <h3>with Kale Rice & Roasted Carrots</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/0101_2PM_Steak-Diane_97315_SQ_hi_res.jpg" alt="Beef Medallions">
-                    <figcaption><h2>Beef Medallions & Mushroom Sauce</h2> 
-                       <h3> with Mashed Potatoes</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/1225_FPV_Pesto_-Broccoli-Sandwich_74916_WEB_SQ_hi_res.jpg" alt="Broccoli Pesto Sandwich">
-                    <figcaption><h2>Broccoli & Basil Pesto Sandwiches</h2>
-                        <h3>with Romaine & Citrus Salad</h3></figcaption>
-                </figure>
-                <figure id="test">
-                    <a href="recipe.html">
-                        <img src="img/0101_FPV_Broccoli-Calzones_97286_WEB_SQ_hi_res.jpg" alt="Broccoli Calzone">
-                    </a>
-                    <a href="recipe.html">
-                        <figcaption><h2>Broccoli & Mozzarella Calzones</h2>
-                            <h3>with Caesar Salad</h3></figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <img src="img/0101_2PV1_Broccoli-Bucatini-Fettuccine_97230_SQ_hi_res.jpg" alt="Bucatini Fettuccine">
-                    <figcaption><h2>Bucatini Alfredo</h2>
-                        <h3>with Broccoli</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/1225_2PV1_Bucatini_100082_SQ_hi_res.jpg" alt="Bucatini & Tomato Sauce">
-                    <figcaption><h2>Bucatini & Tomato Sauce</h2>
-                        <h3>Bucatini & Tomato Sauce</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/1120_FPV_Emchiladas_74891_WEB_SQ_hi_res.jpg" alt="Cheesy Enchiladas">
-                    <figcaption><h2>Cheesy Enchiladas Rojas</h2>
-                        <h3>with Mushrooms & Kale</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/0101_FPF_Crispy-Wild-Alaskan-Pollock_97377_WEB_SQ_hi_res.jpg" alt="Crispy Fish Sandwich">
-                    <figcaption><h2>Crispy Fish Sandwiches</h2>
-                        <h3>with Tartar Sauce & Roasted Sweet 
-                            Potato Wedges</h3></figcaption>
-                </figure>
-                <figure>
-                    <img src="img/0101_2PRE07_General-Tsos-Chicken_97217_WEB_SQ_hi_res.jpg" alt="General Tso's Chicken">
-                    <figcaption><h2>General Tso's Chicken</h2>
-                        <h3>with Bok Choy & Jasmine Rice</h3></figcaption>
-                </figure>
-                
+
+            <?php
+                while($row = mysqli_fetch_assoc($result)){
+
+            ?>
+
+            <figure>
+                <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
+                <figcaption>
+                    <h2><?php echo $row['title'];?></h2>
+                    <h3><?php echo $row['subtitle']?></h3>
+                </figcaption>
+            </figure>
+
+            <?php    } //end of while loop 
+
+                // Release return data
+                msqli_free_result($result);
+                // Close database connection
+                msqli_close($connection);
+            ?>
             </div>
         </main>
         <footer>
-            <a href="../../index.html">Home</a>
-            <a href="../index.html">Wireframe & Style Tile</a>
-            <a href="recipe.html">Recipe</a>
+            <a href="index.php">Home</a>
+            <a href="alpha/index.html">Wireframe & Style Tile</a>
+            <a href="alpha/static/index.html">Static Page</a>
+            <a href="recipe.php">Recipe</a>
         </footer>
     </div>
     <script src="java.js"></script>
