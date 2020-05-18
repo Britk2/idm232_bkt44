@@ -1,8 +1,8 @@
 <?php
 // Create database connection
 $dbhost = "localhost";
-$dbuser = "admin";
-$dbpass = "\$P\$Be3VYh3GPDCAhNlWRXwFy5QOJR6X0q/";
+$dbuser = "btudesig_WPUAG";
+$dbpass = "h3a4A248XugO";
 $dbname = "btudesig_cookbook";
 $port = "3306";
 $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

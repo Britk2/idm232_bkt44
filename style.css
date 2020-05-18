@@ -103,7 +103,6 @@ a{text-decoration: none; color:var(--dark_h)}
 }
 
 #search_bar:focus {
-    
     color: var(--dark_h);
     background: var(--light_h);
 }
@@ -155,9 +154,10 @@ width:100%;}
 .preview figcaption{height: 5rem;}
 
 .preview figure{
-    margin: auto;
+    margin: 1rem auto 1rem auto;
     padding:2rem;
-    opacity: 25%;
+    background: white;
+    box-shadow: 2px 2px 5px var(--text_c);
 }
 
 .filter_b:hover, .quest:hover{
@@ -327,12 +327,6 @@ width:100%;}
         font-size: 90%;
         width: 100%;
         margin: auto;
-    }
-
-    .preview figure{
-        margin: 0;
-        padding:2rem;
-        opacity: 25%;
     }
 }
 
