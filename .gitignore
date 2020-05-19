@@ -23,5 +23,5 @@ $RECYCLE.BIN/
 
 #no db
 git reset --soft HEAD~1
-git reset HEAD path/to/db.php
+git reset HEAD path/to/include/db.php
 git commit -c ORIG_HEAD  
