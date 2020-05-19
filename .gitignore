@@ -20,16 +20,8 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# Windows shortcuts
-*.lnk
 
-# Remove all
-git rm -r --cached .
-
-git add .
-
-git commit -m ".gitignore fix"
-
-# Data Base
-git rm --cached db.php
-db.php
+#no db
+git reset --soft HEAD~1
+git reset HEAD path/to/db.php
+git commit -c ORIG_HEAD  
