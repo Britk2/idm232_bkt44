@@ -75,7 +75,7 @@ header{
 }
 
 #head{
-    background-color: red;
+    background-color: var(--light_c);
     padding: .5rem 1rem;
     position: sticky;
     top: 0;
