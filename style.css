@@ -113,10 +113,11 @@ a{text-decoration: none; color:var(--dark_h)}
   }
 
 footer{
-    background-color: var(--footer_bc);
+    background-color: red;
     padding: 5rem;
     display: flex;
     justify-content: space-evenly;
+    height: 10rem;
 }
 
 /*Home Page*/
