@@ -23,6 +23,13 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Remove all
+git rm -r --cached .
+
+git add .
+
+git commit -m ".gitignore fix"
+
 # Data Base
 git rm --cached db.php
 db.php
