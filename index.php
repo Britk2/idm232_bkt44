@@ -125,15 +125,15 @@
                 while($row = mysqli_fetch_assoc($result)){
 
             ?>
-
-            <figure>
-                <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
-                <figcaption>
-                    <h2><?php echo $row['title'];?></h2>
-                    <h3><?php echo $row['subtitle']?></h3>
-                </figcaption>
-            </figure>
-
+                <a href="recipe.php">
+                    <figure>
+                        <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
+                        <figcaption>
+                            <h2><?php echo $row['title'];?></h2>
+                            <h3><?php echo $row['subtitle']?></h3>
+                        </figcaption>
+                    </figure>
+                </a>
             <?php    } //end of while loop 
 
                 // Release return data
