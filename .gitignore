@@ -24,4 +24,5 @@ $RECYCLE.BIN/
 *.lnk
 
 # Data Base
+git rm --cached db.php
 db.php
