@@ -19,9 +19,3 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
-
-
-#no db
-git reset --soft HEAD~1
-git reset HEAD path/to/db.php
-git commit -c ORIG_HEAD  
