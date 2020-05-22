@@ -76,7 +76,7 @@ header{
 
 #head{
     background-color: var(--light_c);
-    padding: .5rem 1rem;
+    padding: .25rem 5rem;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -85,10 +85,14 @@ header{
 
 #name{
     margin: auto;
-    padding: 2rem;
+    padding: 1rem;
 }
 
-a{text-decoration: none; color:var(--dark_h)}
+a{
+    text-decoration: none; 
+    color:var(--dark_h); 
+    width: fit-content;
+}
 
 #search_bar{
     position: sticky;
@@ -148,15 +152,15 @@ footer{
     width: 100%;
 }
 
-.preview img, .preview figcaption{max-width: 25rem;
-width:100%;}
+.preview img, .preview figcaption{width:100%;}
 
-.preview figcaption{height: 5rem;}
+.preview figcaption{height: 7.5rem;}
 
 .preview figure{
-    padding:2rem;
+    padding:3rem;
     background: white;
     box-shadow: 2px 2px 5px var(--text_c);
+    width: fit-content;
 }
 
 .filter_b:hover, .quest:hover{
@@ -305,7 +309,7 @@ width:100%;}
 
 /*Medium Size*/
 
-@media screen and (min-width:59rem){
+@media screen and (min-width:60rem){
     #ingredients img, .step img{
         width: 45rem;
     }
@@ -327,6 +331,9 @@ width:100%;}
         width: 100%;
         margin: auto;
     }
+
+    .preview img, .preview figcaption{max-width: 21rem;}
+    .preview figure{padding:2rem;}
 }
 
 /*Large size*/

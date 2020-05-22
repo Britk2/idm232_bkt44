@@ -123,17 +123,17 @@
 
             <?php
                 while($row = mysqli_fetch_assoc($result)){
-
             ?>
-                <a href="recipe.html">
-                    <figure>
+                <figure>
+                    <a href="recipe.html">
                         <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
                         <figcaption>
                             <h2><?php echo $row['title'];?></h2>
                             <h3><?php echo $row['subtitle']?></h3>
                         </figcaption>
-                    </figure>
-                </a>
+                    </a>
+                </figure>
+                
             <?php    } //end of while loop 
 
                 // Release return data
