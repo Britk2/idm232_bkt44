@@ -15,16 +15,17 @@
     }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home Chef</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <a href="#top"></a>
+<a href="#top"></a>
     <div class="contain">
         <div id="head">
             <header>
@@ -125,21 +126,28 @@
                 while($row = mysqli_fetch_assoc($result)){
             ?>
                 <figure>
-                    <a href="recipe.html">
+                    <!-- <a href="recipe.php"> -->
+
+                    <?php
+                        $id = $row['id'];
+
+                        echo "<a href=\"recipe.php?id={$id}\">";
+                    ?>
                         <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
                         <figcaption>
                             <h2><?php echo $row['title'];?></h2>
-                            <h3><?php echo $row['subtitle']?></h3>
+                            <h3><?php echo $row['subtitle'];?></h3>
                         </figcaption>
                     </a>
                 </figure>
                 
-            <?php    } //end of while loop 
+            <?php    
+                } //end of while loop 
 
                 // Release return data
-                msqli_free_result($result);
+                mysqli_free_result($result);
                 // Close database connection
-                msqli_close($connection);
+                mysqli_close($connection);
             ?>
             </div>
         </main>
