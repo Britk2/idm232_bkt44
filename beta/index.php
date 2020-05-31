@@ -30,7 +30,7 @@
         <div id="head">
             <header>
                 <div id="logo">
-                    <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="img/logo.svg" alt="logo"></a>
                 </div>
                 <a href="#top"><h1 id="name">Home Chef</h1></a>
                 <div id="search">

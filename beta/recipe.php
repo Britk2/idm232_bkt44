@@ -17,7 +17,7 @@
         <div id="head">
             <header>
                 <div id="logo">
-                    <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="img/logo.svg" alt="logo"></a>
                 </div>
                 <a href="#top"><h1 id="name">Home Chef</h1></a>
                 <div id="search">
@@ -129,20 +129,15 @@
                     $stepImg = $stepImgArray[$lp];
                     $cnt = $lp;
 
-                    // echo $cnt;
-
                     if($cnt > 0){
                         $cnt += $lp;
                     }
 
                     $stepHead = substr($stepArray[$cnt], 2);
                     $stepNum = $stepArray[$cnt][0];
-                    // echo $cnt;
 
                     $stepNumWord = stepToWord($stepNum);
-                    // echo $stepNumWord;
 
-                    // find a way to add ID for the steps
                     echo "
                     <div class=\"step\" id=\"" . $stepNumWord . "\">
                         <div class=\"step_head\"> 
