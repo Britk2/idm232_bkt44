@@ -125,15 +125,6 @@ footer{
 
 /*Home Page*/
 
-#filter img{
-    width: 100%;
-    max-width:5rem;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 2rem;
-    z-index: 25;
-    margin: 0;
-}
 #help img{
     width: 100%;
     max-width:5rem;
@@ -163,11 +154,11 @@ footer{
     width: fit-content;
 }
 
-.filter_b:hover, .quest:hover{
+.quest:hover, .cat ul li a button:hover{
     cursor: pointer;
 }
 
-#fill, #info{
+#info{
     width: 100%;
     height: 40%;
     position:fixed;
@@ -183,7 +174,7 @@ footer{
     color: var(--light_h);
 }
 
-.top, .cat,.cat ul li{
+ .cat,.cat ul li{
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -211,7 +202,7 @@ footer{
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: var(--light_c);
+    color: red;
     height: 87.5%;
 }
 
@@ -221,21 +212,6 @@ footer{
     line-height: 1.5;
     margin: auto;
     max-width: 60ch;
-}
-
-.check{
-    width: 2rem;
-    height: 2rem;
-    border: 2px solid var(--light_c);
-}
-
-.cat a{
-    color: var(--light_c);
-    text-decoration: underline;
-}
-
-#test{
-    opacity: 100%;
 }
 
 #results h1{
@@ -340,7 +316,7 @@ footer{
 
 @media screen and (min-width: 74rem){
 
-    #fill, #info{
+    #info{
         max-width:50rem;
         height: 50%;
         position:fixed;
@@ -366,10 +342,10 @@ footer{
 
     }
 
-    .cat{
+    /* .cat{
         flex-direction: row;
         justify-content: space-around;
-    }
+    } */
 
     .step_head{
         width: auto;

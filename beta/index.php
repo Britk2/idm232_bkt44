@@ -41,11 +41,11 @@
         <input id="search_bar" type="text" placeholder="Search.." hidden>
         <div id="buttons">
             <div id="filter">
-                <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div>
+                <!-- <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div> -->
 
-                <div id="fill" hidden>
+                <div id="fill">
                     <div class="top">
-                        <h1 class="filter_b">x</h1>
+                        <!-- s -->
                         <h1 class="top_h">Filter</h1>
                     </div>
                     <div class="cat">
@@ -53,24 +53,19 @@
                             <h2>Proteins</h2>
                             <ul>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Chicken</a>
+                                    <a href=""><button>Chicken</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Beef</a>
+                                    <a href=""><button>Beef</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Pork</a>
+                                    <a href=""><button>Pork</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Turkey</a>
+                                    <a href=""><button>Turkey</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Fish</a>
+                                    <a href=""><button>Fish</button></a>
                                 </li>
                             </ul>
                         </div>
@@ -78,24 +73,19 @@
                             <h2>Vegtables</h2>
                         <ul>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Carrot</a>
+                                <a href=""><button>Carrot</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Broccoli</a>
+                                <a href=""><button>Broccoli</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Tomato</a>
+                                <a href=""><button>Tomato</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Spinach</a>
+                                <a href=""><button>Spinach</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Corn</a>
+                                <a href=""><button>Corn</button></a>
                             </li>
                         </ul>
                         </div>
