@@ -125,7 +125,6 @@
 
 
                 for($lp = 0; $lp < count($stepImgArray); $lp++){
-                    $step = $stepArray[$lp];
                     $stepImg = $stepImgArray[$lp];
                     $cnt = $lp;
 
