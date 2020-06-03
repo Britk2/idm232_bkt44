@@ -7,9 +7,6 @@
     
     $filter = $_GET['filter'];
 
-
-
-
 // SEARCH
     if(isset($_POST['submit'])){
         $search = $_POST['search'];

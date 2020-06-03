@@ -76,7 +76,7 @@ header{
 
 #head{
     background-color: var(--light_c);
-    padding: .5rem 1rem;
+    padding: .25rem 2.5rem;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -85,19 +85,40 @@ header{
 
 #name{
     margin: auto;
-    padding: 2rem;
+    padding: 1rem;
+    text-transform: uppercase;
 }
 
-a{text-decoration: none; color:var(--dark_h)}
+a{
+    text-decoration: none; 
+    color:var(--dark_h); 
+    width: fit-content;
+}
+
+.search_form{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    z-index: 45;
+    position: sticky;
+    top: 5.85rem;
+}
+
+#submit, #search_bar{
+    border: none;
+}
+
+#submit{
+    width: 20%;
+    background: var(--light_h)
+    
+}
 
 #search_bar{
-    position: sticky;
-    top: 6rem;
-    z-index: 45;
-    border: none;
     background-color: var(--dark_h);
     color: var(--footer_bc);
-    width:100%;
+    width:80%;
+    
     padding:1.5rem;
     margin: 0;
 }
@@ -121,23 +142,19 @@ footer{
 
 /*Home Page*/
 
-#filter img{
-    width: 100%;
-    max-width:5rem;
-    position: fixed;
-    bottom: 1.5rem;
-    right: 2rem;
-    z-index: 25;
-    margin: 0;
-}
 #help img{
     width: 100%;
     max-width:5rem;
     position: fixed;
-    bottom: 7rem;
-    right: 2rem;
+    bottom: 1%;
+    right: 1%;
     z-index: 30;
     margin: 0;
+}
+
+.resultH{
+    text-align: center;
+    padding: 1rem;
 }
 
 .preview{
@@ -145,27 +162,27 @@ footer{
     flex-direction: column;
     font-size: 90%;
     margin: auto 1rem;
-    width: 100%;
+    width: 95%;
 }
 
-.preview img, .preview figcaption{max-width: 25rem;
-width:100%;}
+.preview img, .preview figcaption{width:100%;}
 
-.preview figcaption{height: 5rem;}
+.preview figcaption{height: auto;}
 
 .preview figure{
     padding:2rem;
     background: white;
     box-shadow: 2px 2px 5px var(--text_c);
+    width: fit-content;
 }
 
-.filter_b:hover, .quest:hover{
+.quest:hover, .cat ul li a button:hover{
     cursor: pointer;
 }
 
-#fill, #info{
+#info{
     width: 100%;
-    height: 40%;
+    height: 70%;
     position:fixed;
     bottom: 0;
     right: 0;
@@ -175,20 +192,31 @@ width:100%;}
     z-index: 20;
 }
 
-#fill h1, #fill h2, #info h1{
-    color: var(--light_h);
+#fill{
+    width: 100%;
+    padding-bottom: .5rem;
+    background: var(--footer_bc);
+    opacity: 100%;
+    z-index: 20;
 }
 
-.top, .cat,.cat ul li{
+#fill h1{margin:0; padding-top:1rem;}
+
+#fill h1, #fill h2{
+    color: var(--dark_h);
+}
+
+ .cat,.cat ul li{
     display: flex;
     flex-direction: row;
     justify-content: start;
     padding-left:1rem;
-    padding-top: .5rem;
 }
 
 .cat{
     justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 2rem;
 }
 
 .cat ul li{
@@ -196,10 +224,29 @@ width:100%;}
     width:150%;
     position: relative;
     right:50%;
+    padding: .25rem;
 }
 
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.top h1{
+    color: var(--light_h);
+}
+
+.quest{
+    margin:0;
+    position: absolute;
+    left:1rem;
+    top: 1rem;
+}
+
+
 .top_h{
-    margin: auto;
+    text-align: center;
 }
 
 .cat ul{
@@ -207,8 +254,6 @@ width:100%;}
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    color: var(--light_c);
-    height: 87.5%;
 }
 
 .info_p p{
@@ -217,21 +262,7 @@ width:100%;}
     line-height: 1.5;
     margin: auto;
     max-width: 60ch;
-}
-
-.check{
-    width: 2rem;
-    height: 2rem;
-    border: 2px solid var(--light_c);
-}
-
-.cat a{
-    color: var(--light_c);
-    text-decoration: underline;
-}
-
-#test{
-    opacity: 100%;
+    font-size: 100%;
 }
 
 #results h1{
@@ -305,7 +336,7 @@ width:100%;}
 
 /*Medium Size*/
 
-@media screen and (min-width:59rem){
+@media screen and (min-width:45rem){
     #ingredients img, .step img{
         width: 45rem;
     }
@@ -327,13 +358,16 @@ width:100%;}
         width: 100%;
         margin: auto;
     }
+
+    .preview img, .preview figcaption{max-width: 13rem;}
+    .preview figure{padding:1.25rem;}
 }
 
 /*Large size*/
 
 @media screen and (min-width: 74rem){
 
-    #fill, #info{
+    #info{
         max-width:50rem;
         height: 50%;
         position:fixed;
@@ -359,10 +393,10 @@ width:100%;}
 
     }
 
-    .cat{
+    /* .cat{
         flex-direction: row;
         justify-content: space-around;
-    }
+    } */
 
     .step_head{
         width: auto;

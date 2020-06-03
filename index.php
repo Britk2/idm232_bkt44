@@ -2,34 +2,69 @@
     //Open Connection to db
     require 'include/db.php';
 
-    //DB Table query
-
     $table = 'recipe';
-    $query = "SELECT * FROM {$table}";
-    $result = mysqli_query($connection, $query);
+//FILTER
+    
+    $filter = $_GET['filter'];
 
-    // Error Check
+// SEARCH
+    if(isset($_POST['submit'])){
+        $search = $_POST['search'];
 
-    if( !$result ){
-        die('Database query failed.');
+        // print_r($search);
+        
+        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%'";
+        $result = mysqli_query($connection, $query);
+        
+        // print_r($result);
+
+        if( !$result ){
+            die('Search query failed.');
+        }
+    }else if(isset($filter)){
+        
+        $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}'";
+        $result = mysqli_query($connection, $query);
+        
+        // print_r($result);
+
+        if( !$result ){
+            die('Filter query failed.');
+        }
+
+    }else{
+        
+        $query = "SELECT * FROM {$table}";
+        $result = mysqli_query($connection, $query);
+
+        // Error Check
+
+        if( !$result ){
+            die('Database query failed.');
+        }
     }
 
+    //DB Table query
+
+    
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home Chef</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <a href="#top"></a>
+<a href="#top"></a>
     <div class="contain">
         <div id="head">
             <header>
                 <div id="logo">
-                    <a href="index.php"><img src="img/logo.png" alt="logo"></a>
+                    <a href="index.php"><img src="img/logo.svg" alt="logo"></a>
                 </div>
                 <a href="#top"><h1 id="name">Home Chef</h1></a>
                 <div id="search">
@@ -37,14 +72,19 @@
                 </div>
             </header>
         </div>
-        <input id="search_bar" type="text" placeholder="Search.." hidden>
+        <!--look into why this isnt working-->
+        <form class="search_form" action="index.php" method="POST">
+            <input type="text" name="search"  placeholder="Search.." id="search_bar"hidden>
+            <input type="submit" name="submit" value="Submit" id="submit" hidden>
+        </form>
+
         <div id="buttons">
             <div id="filter">
-                <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div>
+                <!-- <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div> -->
 
-                <div id="fill" hidden>
+                <div id="fill">
                     <div class="top">
-                        <h1 class="filter_b">x</h1>
+                        <!-- s -->
                         <h1 class="top_h">Filter</h1>
                     </div>
                     <div class="cat">
@@ -52,49 +92,41 @@
                             <h2>Proteins</h2>
                             <ul>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Chicken</a>
+                                    <a href="index.php?filter=Chicken"><button>Chicken</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Beef</a>
+                                    <a href="index.php?filter=Beef"><button>Beef</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Pork</a>
+                                    <a href="index.php?filter=Pork"><button>Pork</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Turkey</a>
+                                    <a href="index.php?filter=Turkey"><button>Turkey</button></a>
                                 </li>
                                 <li>
-                                    <div class="check"></div>
-                                    <a href="results.html">Fish</a>
+                                    <a href="index.php?filter=Fish"><button>Fish</button></a>
                                 </li>
                             </ul>
                         </div>
                         <div id="cat2">
-                            <h2>Vegtables</h2>
+                            <h2>Servings</h2>
                         <ul>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Carrot</a>
+                                <a href="index.php?filter=2"><button>2 Servings</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Broccoli</a>
+                                <a href="index.php?filter=4"><button>4 Servings</button></a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div id="cat2">
+                            <h2>Calories</h2>
+                        <ul>
+                            <li>
+                                <a href=""><button>Under 700</button></a>
                             </li>
                             <li>
-                                <div class="check"></div>
-                                <a href="results.html">Tomato</a>
-                            </li>
-                            <li>
-                                <div class="check"></div>
-                                <a href="results.html">Spinach</a>
-                            </li>
-                            <li>
-                                <div class="check"></div>
-                                <a href="results.html">Corn</a>
+                                <a href=""><button>Over 701</button></a>
                             </li>
                         </ul>
                         </div>
@@ -119,36 +151,60 @@
             </div>
         </div>
         <main>
+            <?php
+                if(isset($_POST['submit'])){
+
+                    if ($result->num_rows==0){
+                        echo "<h2 class=\"resultH\">No recipes found</h2>";
+                    }else{
+                        echo "<h2 class=\"resultH\">Result(s)</h2>";
+                    }
+                    
+
+                }else if(isset($filter)){
+                    echo "<h2 class=\"resultH\">".$filter." Filter Result(s)</h2>";
+                }else{
+                    echo "<h2 class=\"resultH\">All Recipes</h2>";
+                }
+            ?>
+            
             <div class="preview">
 
             <?php
                 while($row = mysqli_fetch_assoc($result)){
-
             ?>
-                <a href="recipe.php">
-                    <figure>
+                <figure>
+                    <!-- <a href="recipe.php"> -->
+
+                    <?php
+                        $id = $row['id'];
+
+                        echo "<a href=\"recipe.php?id={$id}\">";
+                    ?>
                         <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
                         <figcaption>
                             <h2><?php echo $row['title'];?></h2>
-                            <h3><?php echo $row['subtitle']?></h3>
+                            <h3><?php echo $row['subtitle'];?></h3>
                         </figcaption>
-                    </figure>
-                </a>
-            <?php    } //end of while loop 
+                    </a>
+                </figure>
+                
+            <?php    
+                } //end of while loop 
 
                 // Release return data
-                msqli_free_result($result);
+                mysqli_free_result($result);
                 // Close database connection
-                msqli_close($connection);
+                mysqli_close($connection);
             ?>
             </div>
         </main>
-        <footer>
+        <!-- <footer>
             <a href="index.php">Home</a>
             <a href="alpha/index.html">Wireframe & Style Tile</a>
             <a href="alpha/static/index.html">Static Page</a>
             <a href="recipe.php">Recipe</a>
-        </footer>
+        </footer> -->
     </div>
     <script src="java.js"></script>
 </body>
