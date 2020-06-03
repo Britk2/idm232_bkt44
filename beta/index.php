@@ -26,7 +26,7 @@
         }
     }else if(isset($filter)){
         
-        $query = "SELECT * FROM {$table} WHERE proteine LIKE '%{$filter}%'";
+        $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}'";
         $result = mysqli_query($connection, $query);
         
         // print_r($result);
@@ -76,8 +76,9 @@
             </header>
         </div>
         <!--look into why this isnt working-->
-        <form class="search_form" action="index.php" method="post">
-            <input id="search_bar" type="text" placeholder="Search.." hidden>
+        <form class="search_form" action="index.php" method="POST">
+            <input type="text" name="search"  placeholder="Search.." id="search_bar"hidden>
+            <input type="submit" name="submit" value="Submit" id="submit" hidden>
         </form>
 
         <div id="buttons">
@@ -111,22 +112,24 @@
                             </ul>
                         </div>
                         <div id="cat2">
-                            <h2>Vegtables</h2>
+                            <h2>Servings</h2>
                         <ul>
                             <li>
-                                <a href=""><button>Carrot</button></a>
+                                <a href="index.php?filter=2"><button>2 Servings</button></a>
                             </li>
                             <li>
-                                <a href=""><button>Broccoli</button></a>
+                                <a href="index.php?filter=4"><button>4 Servings</button></a>
+                            </li>
+                        </ul>
+                        </div>
+                        <div id="cat2">
+                            <h2>Calories</h2>
+                        <ul>
+                            <li>
+                                <a href=""><button>Under 700</button></a>
                             </li>
                             <li>
-                                <a href=""><button>Tomato</button></a>
-                            </li>
-                            <li>
-                                <a href=""><button>Spinach</button></a>
-                            </li>
-                            <li>
-                                <a href=""><button>Corn</button></a>
+                                <a href=""><button>Over 701</button></a>
                             </li>
                         </ul>
                         </div>
@@ -164,7 +167,7 @@
                 }else if(isset($filter)){
                     echo "<h2 class=\"resultH\">".$filter." Filter Result(s)</h2>";
                 }else{
-                    echo "<h2 class=\"resultH\">All Recipe</h2>";
+                    echo "<h2 class=\"resultH\">All Recipes</h2>";
                 }
             ?>
             

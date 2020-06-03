@@ -3,6 +3,7 @@
 // const filter_b = document.getElementById('filter_b');
 const search_b = document.getElementById('search_b'); //search button
 const search_field = document.getElementById('search_bar') // search field
+const submit = document.getElementById('submit')
 const info = document.getElementById('info'); // help mode
 const help_buts = document.querySelectorAll('.quest'); // help button
 const help_b = document.getElementById('quest');
@@ -13,7 +14,7 @@ const help_b = document.getElementById('quest');
 
 search_b.addEventListener('click', () => {
     search_field.hidden = !search_field.hidden;
-    
+    submit.hidden = !submit.hidden;
     if (help_b.hidden) {
         // filter_b.hidden = !filter_b.hidden;
         help_b.hidden = !help_b.hidden;

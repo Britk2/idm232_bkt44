@@ -1,6 +1,39 @@
 <?php
     //Open Connection to db
     require 'include/db.php';
+
+    $table = 'recipe';
+
+// SEARCH
+    if(isset($_POST['submit'])){
+        $search = $_POST['search'];
+
+        // print_r($search);
+        
+        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%'";
+        $result = mysqli_query($connection, $query);
+        
+        // print_r($result);
+
+        if( !$result ){
+            die('Search query failed.');
+        }
+    }else{
+        
+        $query = "SELECT * FROM {$table}";
+        $result = mysqli_query($connection, $query);
+
+        // Error Check
+
+        if( !$result ){
+            die('Database query failed.');
+        }
+    }
+
+    //DB Table query
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +58,10 @@
                 </div>
             </header>
         </div>
-        <input id="search_bar" type="text" placeholder="Search.." hidden>
+        <form class="search_form" action="index.php" method="POST">
+            <input type="text" name="search"  placeholder="Search.." id="search_bar"hidden>
+            <input type="submit" name="submit" value="Submit" id="submit" hidden>
+        </form>
         
         <?php
         // Get ID 

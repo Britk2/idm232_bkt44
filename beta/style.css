@@ -95,14 +95,30 @@ a{
     width: fit-content;
 }
 
-#search_bar{
+.search_form{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    z-index: 45;
+}
+
+#submit, #search_bar{
     position: sticky;
     top: 5.85rem;
-    z-index: 45;
     border: none;
+}
+
+#submit{
+    width: 25%;
+    background: var(--light_h)
+    
+}
+
+#search_bar{
     background-color: var(--dark_h);
     color: var(--footer_bc);
-    width:100%;
+    width:75%;
+    
     padding:1.5rem;
     margin: 0;
 }
