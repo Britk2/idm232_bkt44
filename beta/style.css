@@ -136,6 +136,11 @@ footer{
     margin: 0;
 }
 
+.resultH{
+    text-align: center;
+    padding: 1rem;
+}
+
 .preview{
     display: flex;
     flex-direction: column;
@@ -315,7 +320,7 @@ footer{
 
 /*Medium Size*/
 
-@media screen and (min-width:60rem){
+@media screen and (min-width:45rem){
     #ingredients img, .step img{
         width: 45rem;
     }
@@ -338,8 +343,8 @@ footer{
         margin: auto;
     }
 
-    .preview img, .preview figcaption{max-width: 21rem;}
-    .preview figure{padding:2rem;}
+    .preview img, .preview figcaption{max-width: 13rem;}
+    .preview figure{padding:1.25rem;}
 }
 
 /*Large size*/

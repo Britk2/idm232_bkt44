@@ -2,17 +2,54 @@
     //Open Connection to db
     require 'include/db.php';
 
+    $table = 'recipe';
+//FILTER
+    
+    $filter = $_GET['filter'];
+
+
+
+
+// SEARCH
+    if(isset($_POST['submit'])){
+        $search = $_POST['search'];
+
+        // print_r($search);
+        
+        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%'";
+        $result = mysqli_query($connection, $query);
+        
+        // print_r($result);
+
+        if( !$result ){
+            die('Search query failed.');
+        }
+    }else if(isset($filter)){
+        
+        $query = "SELECT * FROM {$table} WHERE proteine LIKE '%{$filter}%'";
+        $result = mysqli_query($connection, $query);
+        
+        // print_r($result);
+
+        if( !$result ){
+            die('Filter query failed.');
+        }
+
+    }else{
+        
+        $query = "SELECT * FROM {$table}";
+        $result = mysqli_query($connection, $query);
+
+        // Error Check
+
+        if( !$result ){
+            die('Database query failed.');
+        }
+    }
+
     //DB Table query
 
-    $table = 'recipe';
-    $query = "SELECT * FROM {$table}";
-    $result = mysqli_query($connection, $query);
-
-    // Error Check
-
-    if( !$result ){
-        die('Database query failed.');
-    }
+    
 
 ?>
 
@@ -38,7 +75,11 @@
                 </div>
             </header>
         </div>
-        <input id="search_bar" type="text" placeholder="Search.." hidden>
+        <!--look into why this isnt working-->
+        <form class="search_form" action="index.php" method="post">
+            <input id="search_bar" type="text" placeholder="Search.." hidden>
+        </form>
+
         <div id="buttons">
             <div id="filter">
                 <!-- <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div> -->
@@ -53,19 +94,19 @@
                             <h2>Proteins</h2>
                             <ul>
                                 <li>
-                                    <a href=""><button>Chicken</button></a>
+                                    <a href="index.php?filter=Chicken"><button>Chicken</button></a>
                                 </li>
                                 <li>
-                                    <a href=""><button>Beef</button></a>
+                                    <a href="index.php?filter=Beef"><button>Beef</button></a>
                                 </li>
                                 <li>
-                                    <a href=""><button>Pork</button></a>
+                                    <a href="index.php?filter=Pork"><button>Pork</button></a>
                                 </li>
                                 <li>
-                                    <a href=""><button>Turkey</button></a>
+                                    <a href="index.php?filter=Turkey"><button>Turkey</button></a>
                                 </li>
                                 <li>
-                                    <a href=""><button>Fish</button></a>
+                                    <a href="index.php?filter=Fish"><button>Fish</button></a>
                                 </li>
                             </ul>
                         </div>
@@ -110,6 +151,23 @@
             </div>
         </div>
         <main>
+            <?php
+                if(isset($_POST['submit'])){
+
+                    if ($result->num_rows==0){
+                        echo "<h2 class=\"resultH\">No recipes found</h2>";
+                    }else{
+                        echo "<h2 class=\"resultH\">Result(s)</h2>";
+                    }
+                    
+
+                }else if(isset($filter)){
+                    echo "<h2 class=\"resultH\">".$filter." Filter Result(s)</h2>";
+                }else{
+                    echo "<h2 class=\"resultH\">All Recipe</h2>";
+                }
+            ?>
+            
             <div class="preview">
 
             <?php
