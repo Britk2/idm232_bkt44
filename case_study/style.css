@@ -1,0 +1,97 @@
+@import "../normal.css";
+
+:root{
+    --background-c: #F7F7F9; /*background color*/
+    --text_c: #707070; /*text color*/
+    --dark_h: #2D3047; /*dark header*/
+    --light_h: #C6CAED; /*light header*/
+    --light_c: #FFFFFF; /*light color*/
+    --footer_bc: #E8E9F3; /*footer background color*/
+
+    --par_t: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+html{
+    width: 100%;
+    font-size:100%;
+    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+    display: block;
+    font-family: var(--par_t);
+    color: var(--text_c);
+}
+
+[hidden] {
+    display:none !important;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+body{
+    width: 100%;
+    margin:auto;
+    background: var(--background-c);
+}
+
+.contain{
+    width:90%;
+    margin:auto;
+    padding-bottom: 2rem;
+}
+
+h1,h3, h4{
+    color: var(--dark_h);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+h2, a{
+    color: var(--dark_h);
+    padding-left: 1rem;
+    text-decoration: none;
+}
+
+h2:hover, a:hover{
+    color:var(--light_h);
+}
+
+img{
+    display: block;
+    margin: auto;
+    box-shadow: 2px 2px 5px var(--text_c);
+    width:85%;
+    margin: 2rem;
+}
+
+p{
+    max-width: 75ch;
+    margin: auto;
+    padding-bottom: 2rem;
+    text-indent: 2rem;
+    line-height: 1.5;
+}
+
+.links{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.links a{
+    color: var(--dark_h);
+    padding: 1rem;
+    background-color: var(--light_h);
+}
+
+.links a:hover{
+    background-color: var(--dark_h);
+    color:var(--light_h);
+}
+
+#final{
+    padding:0;
+}

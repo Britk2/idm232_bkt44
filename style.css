@@ -95,6 +95,10 @@ a{
     width: fit-content;
 }
 
+a:hover{
+    color: var(--light_h);
+}
+
 .search_form{
     display: flex;
     flex-flow: row wrap;
@@ -142,6 +146,34 @@ footer{
 
 /*Home Page*/
 
+div.dropdown{
+    margin: 2.5rem .25rem .25rem .25rem;
+    position:relative;
+}
+
+.dropdown-submenu {
+position: relative;
+width: fit-content;
+}
+
+.dropdown-submenu .dropdown-menu {
+top: 0;
+left: 100%;
+margin-top: -1px;
+max-width:10rem;
+}
+
+li.dropdown-submenu, .dropdown-submenu li{
+padding:.5rem;
+}
+
+@media screen and (min-width: 22.5rem) {
+li.dropdown-submenu, .dropdown-submenu li{
+padding:1rem;
+width: auto;
+    }
+}
+
 #help img{
     width: 100%;
     max-width:5rem;
@@ -174,9 +206,10 @@ footer{
     background: white;
     box-shadow: 2px 2px 5px var(--text_c);
     width: fit-content;
+    margin: 1rem;
 }
 
-.quest:hover, .cat ul li a button:hover{
+.quest:hover{
     cursor: pointer;
 }
 
@@ -192,68 +225,11 @@ footer{
     z-index: 20;
 }
 
-#fill{
-    width: 100%;
-    padding-bottom: .5rem;
-    background: var(--footer_bc);
-    opacity: 100%;
-    z-index: 20;
-}
-
-#fill h1{margin:0; padding-top:1rem;}
-
-#fill h1, #fill h2{
-    color: var(--dark_h);
-}
-
- .cat,.cat ul li{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    padding-left:1rem;
-}
-
-.cat{
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding: 2rem;
-}
-
-.cat ul li{
-    justify-content: space-between;
-    width:150%;
-    position: relative;
-    right:50%;
-    padding: .25rem;
-}
-
-.top{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.top h1{
-    color: var(--light_h);
-}
-
 .quest{
     margin:0;
     position: absolute;
     left:1rem;
     top: 1rem;
-}
-
-
-.top_h{
-    text-align: center;
-}
-
-.cat ul{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 .info_p p{
@@ -298,6 +274,10 @@ footer{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+#ingredients li{
+    max-width: 55;
 }
 
 #header h1, #header h2{

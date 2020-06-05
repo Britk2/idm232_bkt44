@@ -3,13 +3,14 @@
     require 'include/db.php';
 
     $table = 'recipe';
+
 //FILTER
     
     $filter = $_GET['filter'];
 
 // SEARCH
     if(isset($_POST['submit'])){
-        $search = $_POST['search'];
+        $search = htmlspecialchars($_POST['search']);
 
         // print_r($search);
         
@@ -22,8 +23,7 @@
             die('Search query failed.');
         }
     }else if(isset($filter)){
-        
-        $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}'";
+        $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}%'";
         $result = mysqli_query($connection, $query);
         
         // print_r($result);
@@ -56,6 +56,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Chef</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -82,9 +85,10 @@
             <div id="filter">
                 <!-- <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div> -->
 
-                <div id="fill">
+                
+
+                <!-- <div id="fill">
                     <div class="top">
-                        <!-- s -->
                         <h1 class="top_h">Filter</h1>
                     </div>
                     <div class="cat">
@@ -131,7 +135,7 @@
                         </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div id="help">
                 <div class="quest" id="quest"><img src="img/help.png" alt="help"></div>
@@ -151,6 +155,41 @@
             </div>
         </div>
         <main>
+            <div class="container">              
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Filter
+                    <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">by Protein <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.php?filter=Chicken">Chicken</a></li>
+                            <li><a href="index.php?filter=Beef">Beef</a></li>
+                            <li><a href="index.php?filter=Pork">Pork</a></li>
+                            <li><a href="index.php?filter=Turkey">Turkey</a></li>
+                            <li><a href="index.php?filter=Fish">Seafood</a></li>
+                            <li><a href="index.php?filter=Vegitarian">Vegitarian</a></li>
+                        </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">by Calories <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://btudesign.com/idm241_bkt44/final/build/">Under 600 Cal</a></li>
+                            <li><a href="#">600 - 700 Cal</a></li>
+                            <li><a href="#">701 - 800 Cal</a></li>
+                            <li><a href="#">801 - 1,000 Cal</a></li>
+                        </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                        <a class="test" tabindex="-1" href="#">by Servings <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.php?filter=2">2 Servings</a></li>
+                            <li><a href="index.php?filter=4">4 Servings</a></li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <?php
                 if(isset($_POST['submit'])){
 
@@ -162,7 +201,14 @@
                     
 
                 }else if(isset($filter)){
-                    echo "<h2 class=\"resultH\">".$filter." Filter Result(s)</h2>";
+                    if($filter == "Fish")
+                    {
+                        echo "<h2 class=\"resultH\"> Seafood Filter Result(s)</h2>";
+                    }else if($filter == "2" || $filter =="4"){
+                        echo "<h2 class=\"resultH\">".$filter." Servings Filter Result(s)</h2>";
+                    }else{
+                        echo "<h2 class=\"resultH\">".$filter." Filter Result(s)</h2>";
+                    }
                 }else{
                     echo "<h2 class=\"resultH\">All Recipes</h2>";
                 }
@@ -181,12 +227,14 @@
 
                         echo "<a href=\"recipe.php?id={$id}\">";
                     ?>
-                        <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
-                        <figcaption>
-                            <h2><?php echo $row['title'];?></h2>
-                            <h3><?php echo $row['subtitle'];?></h3>
-                        </figcaption>
-                    </a>
+                            <img src="img/<?php echo $row['main_img'];?>" alt="<?php echo $row['title'];?>">
+                            <figcaption>
+                                <h2><?php echo $row['title'];?></h2>
+                                <h3><?php echo $row['subtitle'];?></h3>
+                                </a>
+                                <h4><?php echo $row['servings'];?> servings</h4>
+                                <h4><?php echo $row['cal_per_serving'];?> calories</h4>
+                            </figcaption>
                 </figure>
                 
             <?php    
@@ -207,5 +255,27 @@
         </footer> -->
     </div>
     <script src="java.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $('.dropdown-submenu a.test').on("click", function(e){
+            if($(this).next('ul').is(':visible')){ //if dropdown click again, it closes the drop down.
+                $('.dropdown-submenu ul:visible').toggle();
+                $(this).next('ul').hide();
+                
+            }else{ // closes all dropdown that are visible and only shows the one clicked
+                $('.dropdown-submenu ul:visible').toggle();
+                $(this).next('ul').show();
+            }
+            e.stopPropagation();
+            e.preventDefault();
+            });
+
+            // $('.dropdown-submenu a.test').on("blur", function(e){ //if user closes filter closes all the menu options that were open and visible
+            // $('.dropdown-submenu ul:visible').hide();
+            // });
+
+        });
+    </script>
 </body>
 </html>

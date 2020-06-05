@@ -6,7 +6,7 @@
 
 // SEARCH
     if(isset($_POST['submit'])){
-        $search = $_POST['search'];
+        $search = htmlspecialchars($_POST['search']);
 
         // print_r($search);
         
@@ -97,7 +97,7 @@
                 </div>
                 <h1><?php echo $row['title'];?></h1>
                 <h2><?php echo $row['subtitle']?></h2>
-                <p id="desc"><?php echo $row['description']?></p>
+                <h4><?php echo $row['servings'];?> servings   | |   <?php echo $row['cal_per_serving'];?> calories</h4>
             </div>
             <div id="ingredients">
                 <img src="img/<?php echo $row['ingredients_img'];?>" alt="<?php echo $row['title'];?> Ingrdients">
