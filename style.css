@@ -214,7 +214,7 @@ width: auto;
 }
 
 #info{
-    width: 100%;
+    width: fit-content;
     height: 70%;
     position:fixed;
     bottom: 0;
@@ -223,6 +223,21 @@ width: auto;
     background: var(--dark_h);
     opacity: 100%;
     z-index: 20;
+}
+
+
+.top{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.top h1{
+    color: var(--light_h);
+}
+
+.top_h{
+    text-align: center;
 }
 
 .quest{
@@ -239,6 +254,7 @@ width: auto;
     margin: auto;
     max-width: 60ch;
     font-size: 100%;
+    text-indent: 3rem;
 }
 
 #results h1{
@@ -277,7 +293,7 @@ width: auto;
 }
 
 #ingredients li{
-    max-width: 55;
+    max-width: 45ch;
 }
 
 #header h1, #header h2{

@@ -14,7 +14,7 @@
 
         // print_r($search);
         
-        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%'";
+        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%' OR servings LIKE '%{$search}%' OR protein LIKE '%{$search}%' OR cal_per_serving LIKE '%{$search}%' OR all_ingredients LIKE '%{$search}%'";
         $result = mysqli_query($connection, $query);
         
         // print_r($result);
@@ -23,7 +23,16 @@
             die('Search query failed.');
         }
     }else if(isset($filter)){
-        $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}%'";
+
+        if($filter == "600"){
+            $query = "SELECT * FROM {$table} WHERE cal_per_serving < '600'";
+        }else if($filter == "800"){
+            $query = "SELECT * FROM {$table} WHERE cal_per_serving < '800' AND cal_per_serving > '601'";
+        }else if($filter == "999"){
+            $query = "SELECT * FROM {$table} WHERE cal_per_serving < '999' AND cal_per_serving > '801'";
+        }else{
+            $query = "SELECT * FROM {$table} WHERE protein LIKE '%{$filter}%' OR servings LIKE '%{$filter}%'";
+        }
         $result = mysqli_query($connection, $query);
         
         // print_r($result);
@@ -82,61 +91,6 @@
         </form>
 
         <div id="buttons">
-            <div id="filter">
-                <!-- <div class="filter_b" id="filter_b"><img src="img/filter.png" alt="filter"></div> -->
-
-                
-
-                <!-- <div id="fill">
-                    <div class="top">
-                        <h1 class="top_h">Filter</h1>
-                    </div>
-                    <div class="cat">
-                        <div id="cat1">
-                            <h2>Proteins</h2>
-                            <ul>
-                                <li>
-                                    <a href="index.php?filter=Chicken"><button>Chicken</button></a>
-                                </li>
-                                <li>
-                                    <a href="index.php?filter=Beef"><button>Beef</button></a>
-                                </li>
-                                <li>
-                                    <a href="index.php?filter=Pork"><button>Pork</button></a>
-                                </li>
-                                <li>
-                                    <a href="index.php?filter=Turkey"><button>Turkey</button></a>
-                                </li>
-                                <li>
-                                    <a href="index.php?filter=Fish"><button>Fish</button></a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="cat2">
-                            <h2>Servings</h2>
-                        <ul>
-                            <li>
-                                <a href="index.php?filter=2"><button>2 Servings</button></a>
-                            </li>
-                            <li>
-                                <a href="index.php?filter=4"><button>4 Servings</button></a>
-                            </li>
-                        </ul>
-                        </div>
-                        <div id="cat2">
-                            <h2>Calories</h2>
-                        <ul>
-                            <li>
-                                <a href=""><button>Under 700</button></a>
-                            </li>
-                            <li>
-                                <a href=""><button>Over 701</button></a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                </div> -->
-            </div>
             <div id="help">
                 <div class="quest" id="quest"><img src="img/help.png" alt="help"></div>
 
@@ -149,9 +103,9 @@
                         <p>Browse through recipes, use the filter, or search for a specific name. Find your next perfect meal!
                         </p>
                         <p>Filter by including or excluding certain ingredients by selecting the check mark or the cross out respectively. Find your next meal through moods or needs.
-                    </p>
+                        </p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         <main>
@@ -174,10 +128,9 @@
                         <li class="dropdown-submenu">
                         <a class="test" tabindex="-1" href="#">by Calories <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="http://btudesign.com/idm241_bkt44/final/build/">Under 600 Cal</a></li>
-                            <li><a href="#">600 - 700 Cal</a></li>
-                            <li><a href="#">701 - 800 Cal</a></li>
-                            <li><a href="#">801 - 1,000 Cal</a></li>
+                            <li><a href="index.php?filter=600">600 & Under</a></li>
+                            <li><a href="index.php?filter=800">601 - 800 Cal</a></li>
+                            <li><a href="index.php?filter=999">801 & Over</a></li>
                         </ul>
                         </li>
                         <li class="dropdown-submenu">
@@ -201,7 +154,13 @@
                     
 
                 }else if(isset($filter)){
-                    if($filter == "Fish")
+                    if($filter == "600"){
+                        echo "<h2 class=\"resultH\">600 Cal & Under Result(s)</h2>";
+                    }else if($filter == "800"){
+                        echo "<h2 class=\"resultH\">601 Cal - 800 Cal Result(s)</h2>";
+                    }else if($filter == "999"){
+                        echo "<h2 class=\"resultH\">801 Cal & Over Result(s)</h2>";
+                    }else if($filter == "Fish")
                     {
                         echo "<h2 class=\"resultH\"> Seafood Filter Result(s)</h2>";
                     }else if($filter == "2" || $filter =="4"){
@@ -232,8 +191,7 @@
                                 <h2><?php echo $row['title'];?></h2>
                                 <h3><?php echo $row['subtitle'];?></h3>
                                 </a>
-                                <h4><?php echo $row['servings'];?> servings</h4>
-                                <h4><?php echo $row['cal_per_serving'];?> calories</h4>
+                                <h4><?php echo $row['servings'];?> servings   | |   <?php echo $row['cal_per_serving'];?> calories</h4>
                             </figcaption>
                 </figure>
                 
