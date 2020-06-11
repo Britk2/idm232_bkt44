@@ -102,3 +102,9 @@ p{
 #final{
     padding:0;
 }
+
+footer{
+    background-color: var(--footer_bc);
+    padding: 5rem;
+    height: 10rem;
+}

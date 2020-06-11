@@ -100,9 +100,10 @@
                         <h1 class="top_h">Help</h1>
                     </div>
                     <div class="info_p">
-                        <p>Browse through recipes, use the filter, or search for a specific name. Find your next perfect meal!
+                        <p>
+                            Home Chef is a webite that provides a means to finding a perfect recipe just for you! With appoximately 37 differnt recipes, you are bound to find a meal that suits your taste! Be come a master <strong>Home Chef.</strong>
                         </p>
-                        <p>Filter by including or excluding certain ingredients by selecting the check mark or the cross out respectively. Find your next meal through moods or needs.
+                        <p>Browse through recipes or search with a key term. Filter by using the dropdown button and select the category you want to filter by. From there choose your prefered protein, serving amount, as well as calories count! Find your perfect meal today!
                         </p>
                     </div>
                 </div>
@@ -205,12 +206,6 @@
             ?>
             </div>
         </main>
-        <!-- <footer>
-            <a href="index.php">Home</a>
-            <a href="alpha/index.html">Wireframe & Style Tile</a>
-            <a href="alpha/static/index.html">Static Page</a>
-            <a href="recipe.php">Recipe</a>
-        </footer> -->
     </div>
     <script src="java.js"></script>
     <script>
@@ -229,11 +224,11 @@
             e.preventDefault();
             });
 
-            // $('.dropdown-submenu a.test').on("blur", function(e){ //if user closes filter closes all the menu options that were open and visible
-            // $('.dropdown-submenu ul:visible').hide();
-            // });
-
         });
     </script>
 </body>
+<footer>
+
+</footer>
+
 </html>

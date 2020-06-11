@@ -140,6 +140,7 @@ a:hover{
 footer{
     background-color: var(--footer_bc);
     padding: 5rem;
+    height: 10rem;
     display: flex;
     justify-content: space-evenly;
 }
@@ -394,12 +395,6 @@ li.dropdown-submenu, .dropdown-submenu li{
         padding: 2rem;
 
     }
-
-    /* .cat{
-        flex-direction: row;
-        justify-content: space-around;
-    } */
-
     .step_head{
         width: auto;
         margin: 0;
