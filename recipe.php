@@ -37,7 +37,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe</title>
+    <title>Home Chef: Recipe</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -48,7 +48,7 @@
                 <div id="logo">
                     <a href="index.php"><img src="img/logo.svg" alt="logo"></a>
                 </div>
-                <a href="#top"><h1 id="name">Home Chef: Recipe</h1></a>
+                <a href="#top"><h1 id="name">Home Chef</h1></a>
                 <div id="search">
                     <div id="search_b"><img src="img/search.png" alt="search"></div>
                 </div>
