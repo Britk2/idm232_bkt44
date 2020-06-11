@@ -10,7 +10,7 @@
 
         // print_r($search);
         
-        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%'";
+        $query = "SELECT * FROM {$table} WHERE title LIKE '%{$search}%' OR subtitle LIKE '%{$search}%' OR servings LIKE '%{$search}%' OR protein LIKE '%{$search}%' OR cal_per_serving LIKE '%{$search}%' OR all_ingredients LIKE '%{$search}%'";
         $result = mysqli_query($connection, $query);
         
         // print_r($result);
@@ -98,6 +98,7 @@
                 <h1><?php echo $row['title'];?></h1>
                 <h2><?php echo $row['subtitle']?></h2>
                 <h4><?php echo $row['servings'];?> servings   | |   <?php echo $row['cal_per_serving'];?> calories</h4>
+                <p id="desc"><?php echo $row['description']?></p>
             </div>
             <div id="ingredients">
                 <img src="img/<?php echo $row['ingredients_img'];?>" alt="<?php echo $row['title'];?> Ingrdients">
